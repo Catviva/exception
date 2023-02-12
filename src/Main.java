@@ -1,6 +1,8 @@
 import transport.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
         public static void main(String[] args) {
@@ -52,10 +54,21 @@ public class Main {
             car1.passDiagnostic();
             mechanic1.repairTheCar(car1);
 
+            Map<Transport, List<Mechanic>> servicelist = new HashMap<>();
 
+            servicelist.put(car1, car1.getMechanicList());
+            servicelist.put(car2, car2.getMechanicList());
+            servicelist.put(car3, car3.getMechanicList());
+            servicelist.put(car4, car4.getMechanicList());
+            servicelist.put(bus1, bus1.getMechanicList());
+            servicelist.put(bus2, bus2.getMechanicList());
+            servicelist.put(truck1, truck1.getMechanicList());
+            servicelist.put(truck4, truck4.getMechanicList());
 
-
-
+            for (Map.Entry<Transport, List<Mechanic>> car: servicelist.entrySet()) {
+                System.out.println("Автомобиль " + car.getKey().getBrand() +
+                        " обслуживает механик " + car.getKey().getMechanicList());
+            }
 
         }
         private static void printInfo(Transport transport) {
