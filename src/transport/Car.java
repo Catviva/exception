@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.List;
+
 public class Car <T extends LicenseCategoryB> extends Transport  {
 
     public CarBody getCarBody() {
@@ -14,8 +16,10 @@ public class Car <T extends LicenseCategoryB> extends Transport  {
     public Car(String brand,
                String model,
                double engineVolume,
-               LicenseCategoryB driver, CarBody carBody) {
-        super(brand, model, engineVolume, driver);
+               LicenseCategoryB driver,
+               CarBody carBody,
+               List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.setCarBody(carBody);
     }
 
@@ -47,6 +51,12 @@ public class Car <T extends LicenseCategoryB> extends Transport  {
     public void printType(){
         System.out.println("Кузов автомобиля " + getBrand() + " - " + carBody);
     }
+
+    @Override
+    public boolean needDiagnostic() {
+        return true;
+    }
+
 
     @Override
     public void maxSpeed() {

@@ -1,10 +1,12 @@
 package transport;
 
+import java.util.List;
+
 public class Bus <T extends LicenseCategoryD> extends Transport  {
     private Capacity capacity;
 
-    public Bus(String brand, String model, double engineVolume, Driver driver, Capacity capacity) {
-        super(brand, model, engineVolume, driver);
+    public Bus(String brand, String model, double engineVolume, Driver driver, Capacity capacity, List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.capacity = capacity;
     }
 
@@ -46,6 +48,12 @@ public class Bus <T extends LicenseCategoryD> extends Transport  {
     public void printType() {
         System.out.println("Максимальнаая вместимость автобуса " + getBrand() + " - " + capacity);
     }
+
+    @Override
+    public boolean needDiagnostic() {
+        return false;
+    }
+
     @Override
     public void passDiagnostic () {
         throw new TransportTypeException("Автобусы диагностику проходить не должны");

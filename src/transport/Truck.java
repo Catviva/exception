@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.List;
+
 public class Truck <T extends LicenseCategoryC> extends Transport  {
 
     private final Enum<CapacityType> capacityType;
@@ -7,8 +9,8 @@ public class Truck <T extends LicenseCategoryC> extends Transport  {
     public Truck(String brand,
                  String model,
                  double engineVolume,
-                 LicenseCategoryC driver, CapacityType capacityType) {
-        super(brand, model, engineVolume, driver);
+                 LicenseCategoryC driver, CapacityType capacityType, List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.capacityType = capacityType;
     }
 
@@ -31,6 +33,11 @@ public class Truck <T extends LicenseCategoryC> extends Transport  {
     }
 
     @Override
+    public boolean needDiagnostic() {
+        return true;
+    }
+
+    @Override
     public void pitStop () {
         System.out.println("Пит-стоп у грузового автомобиля");
     }
@@ -48,6 +55,7 @@ public class Truck <T extends LicenseCategoryC> extends Transport  {
     @Override
     public void passDiagnostic (){
         System.out.println("Пройти диагностику!");
+
     }
 
 }
