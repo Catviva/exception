@@ -59,4 +59,14 @@ public class Bus <T extends LicenseCategoryD> extends Transport  {
         throw new TransportTypeException("Автобусы диагностику проходить не должны");
 
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

@@ -71,7 +71,13 @@ public class Car <T extends LicenseCategoryB> extends Transport  {
         System.out.println("Пройти дигностику!");
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
-
-
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

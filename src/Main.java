@@ -1,8 +1,6 @@
 import transport.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
         public static void main(String[] args) {
@@ -69,7 +67,17 @@ public class Main {
                 System.out.println("Автомобиль " + car.getKey().getBrand() +
                         " обслуживает механик " + car.getKey().getMechanicList());
             }
+            /*Set<Driver> driverSet = new HashSet<>();
+            driverSet.add(driverB);
+            driverSet.add(driverC);
+            driverSet.add(driverD);
+            for (Driver driver : driverSet)
+            printListOfDrivers();*/
 
+        }
+        public static void printListOfDrivers (Set<Driver> driverSet) {
+
+            System.out.println("Список водителей: " + driverSet);
         }
         private static void printInfo(Transport transport) {
             System.out.println("Водитель " + transport.getDriver().getName()+

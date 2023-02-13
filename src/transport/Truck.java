@@ -58,4 +58,13 @@ public class Truck <T extends LicenseCategoryC> extends Transport  {
 
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

@@ -10,6 +10,16 @@ public class Mechanic {
         this.company = company;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public String getName() {
         return name;
     }

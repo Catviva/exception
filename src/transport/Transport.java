@@ -1,6 +1,7 @@
 package transport;
 
 import java.util.List;
+import java.util.Objects;
 
 import static transport.CheckUtility.checkBrand;
 import static transport.CheckUtility.checkModel;
@@ -92,6 +93,16 @@ public abstract class Transport <T extends Driver> implements Competing {
     }
     public abstract void passDiagnostic() throws TransportTypeException;
 
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 
 }
 
