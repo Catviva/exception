@@ -10,16 +10,20 @@ public class LicenseCategoryC extends Driver {
 
     @Override
     public void startMoving() {
-        System.out.println("Водитель категории C" + getName() + "начал движение");
+        System.out.println("Водитель категории C" + getName() +
+                "начал движение");
     }
 
     @Override
     public void stopMoving() {
-        System.out.println("Водитель категории C" + getName() + "закончил движение");
+        System.out.println("Водитель категории C" + getName() +
+                "закончил движение");
     }
 
     @Override
     public void refuel() {
-        System.out.println("Водитель категории C" + getName() + "заправляет автобус");
+        System.out.println("Водитель категории C" + getName() +
+                "заправляет автобус");
     }
+
 }

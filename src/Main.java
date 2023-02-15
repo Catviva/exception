@@ -68,18 +68,29 @@ public class Main {
                 System.out.println("Автомобиль " + car.getKey().getBrand() +
                         " обслуживает механик " + car.getKey().getMechanicList());
             }
-            /*Set<Driver> driverSet = new HashSet<>();
-            driverSet.add(driverB);
-            driverSet.add(driverC);
-            driverSet.add(driverD);
-            for (Driver driver : driverSet)
-            printListOfDrivers();*/
+            Set<Driver> driverSet = new HashSet<>();
+            List<Driver> drivers = new ArrayList<>();
+            drivers.add(driverB);
+            drivers.add(driverC);
+            drivers.add(driverD);
+            for (Driver driver : drivers)
+            driverSet.add(driver);
+
+            Iterator<Driver> iterator = driverSet.iterator();
+
+            while (iterator.hasNext()) {
+                Driver driver = iterator.next();
+                System.out.println(driver);
+            }
 
         }
-        public static void printListOfDrivers (Set<Driver> driverSet) {
 
-            System.out.println("Список водителей: " + driverSet);
-        }
+
+
+
+
+
+
         private static void printInfo(Transport transport) {
             System.out.println("Водитель " + transport.getDriver().getName()+
                     " управляет " + transport.getBrand() +
