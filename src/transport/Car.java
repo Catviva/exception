@@ -72,12 +72,12 @@ public class Car <T extends LicenseCategoryB> extends Transport  {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        return super.equals(o);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return super.hashCode();
     }
 }

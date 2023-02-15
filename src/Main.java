@@ -52,6 +52,7 @@ public class Main {
             car1.passDiagnostic();
             mechanic1.repairTheCar(car1);
 
+
             Map<Transport, List<Mechanic>> servicelist = new HashMap<>();
 
             servicelist.put(car1, car1.getMechanicList());

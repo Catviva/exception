@@ -93,17 +93,18 @@ public abstract class Transport <T extends Driver> implements Competing {
     }
     public abstract void passDiagnostic() throws TransportTypeException;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transport)) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(driver, transport.driver) && Objects.equals(mechanicList, transport.mechanicList);
+    }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(brand, model, engineVolume, driver, mechanicList);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
 }
 
 
